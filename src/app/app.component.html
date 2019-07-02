@@ -33,50 +33,37 @@
   ></a>
 </ng-template>
 
-
-
-<md-sidebar [withToggle]="true">
-  <md-sidebar-header [ngStyle]="{'padding': '1rem 3rem 0 0rem'}">
-    <img src="../assets/CompanyLogo.png"/>
-  </md-sidebar-header>
-  <md-sidebar-body>
-    <md-sidebar-nav>
-      <md-sidebar-nav-item
-        (navItemClick) = "onClick($event)"
-        title="Level 1"
-        icon='record_20'>
-      </md-sidebar-nav-item>
-
-      <md-sidebar-nav-item
-        title="Level 1 + Sub"
-        [expanded]="true"
-        headerLevel="secondary"
-        icon='record_20'
-      >
-
-          <md-sidebar-nav-item title="Level 2"></md-sidebar-nav-item>
-          <md-sidebar-nav-item title="Level 2"></md-sidebar-nav-item>
-
-          <md-sidebar-nav-item title="Level 2 + Sub" [expanded]="true" headerLevel="tertiary">
-
-            <md-sidebar-nav-item title="Level 3"></md-sidebar-nav-item>
-            <md-sidebar-nav-item title="Level 3"></md-sidebar-nav-item>
-            <md-sidebar-nav-item title="Level 3"></md-sidebar-nav-item>
-
+<div class="page">
+<!-- side bar -->
+    <md-sidebar [withToggle]="true">
+      <md-sidebar-header [ngStyle]="{'padding': '1rem 3rem 0 0rem'}">
+        <img src="../assets/CompanyLogo.png"/>
+      </md-sidebar-header>
+      <md-sidebar-body>
+        <md-sidebar-nav>
+          <md-sidebar-nav-item
+          routerLink="/home"
+          routerLinkActive="active"
+            title="Home"
+            icon='home_20'>
           </md-sidebar-nav-item>
-      </md-sidebar-nav-item>
-    </md-sidebar-nav>
 
-    <md-sidebar-nav title= "section title">
-      <md-sidebar-nav-item title="Level 1" icon='record_20'></md-sidebar-nav-item>
-    </md-sidebar-nav>
-  </md-sidebar-body>
+          <md-sidebar-nav-item
+            title="Users"
+            routerLink="/users"
+            routerLinkActive="active"
+            icon='record_20'>
+          </md-sidebar-nav-item>
+        </md-sidebar-nav>
+      </md-sidebar-body>
 
-  <md-sidebar-footer [ngStyle]="{'margin-top': '5rem'}">
-    <md-sidebar-nav>
-      <md-sidebar-nav-item title="Footer Item" icon="company_24"></md-sidebar-nav-item>
-    </md-sidebar-nav>
-  </md-sidebar-footer>
-</md-sidebar>
-
-<router-outlet></router-outlet>
+      <md-sidebar-footer [ngStyle]="{'margin-top': '5rem'}">
+        <md-sidebar-nav>
+          <md-sidebar-nav-item title="Footer Item" icon="company_24"></md-sidebar-nav-item>
+        </md-sidebar-nav>
+      </md-sidebar-footer>
+    </md-sidebar>
+    <div class="page-area">
+    <router-outlet></router-outlet>
+    </div>
+</div>
