@@ -1,8 +1,9 @@
 import { ModalRef } from '@momentum-ui/angular';
 import { Component } from '@angular/core';
 
+
 @Component({
-  selector: 'modal-example',
+  selector: 'app-modal',
   template: `
     <md-modal
       htmlId="modal1"
@@ -12,7 +13,15 @@ import { Component } from '@angular/core';
         headerLabel="Default Modal">
       </md-modal-header>
       <md-modal-body>
-        <form></form>
+        <form #form="ngForm" (ngSubmit)="save(form.value)" >
+        <md-input
+        [(ngModel)]="this.sampleData.value"
+        inputSize="small-5"
+        label="Enter hex color value"
+        name="name"
+      >
+      </md-input>
+        </form>
       </md-modal-body>
       <md-modal-footer>
         <button md-button
@@ -27,6 +36,7 @@ import { Component } from '@angular/core';
           alt="Submit Form"
           type="submit"
           aria-label="Submit Form"
+          (click)="form.ngSubmit.emit()"
         >
           OK
         </button>
@@ -36,12 +46,22 @@ import { Component } from '@angular/core';
 })
 export class AppModalComponent {
   sampleData;
+  submitted = false;
   constructor(private modalRef: ModalRef) {
     this.sampleData = this.modalRef.data;
+
   }
 
-  close() {
+  public close() {
+    if (this.submitted) {
+      this.modalRef.data = this.sampleData;
+    }
     this.modalRef.close(this.sampleData);
+  }
+
+  public save() {
+    this.submitted = true;
+    this.close();
   }
 
 }

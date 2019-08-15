@@ -22,9 +22,9 @@ export class HomeComponent implements OnInit {
       },
       backdrop: true
     });
-    modalRef.afterClosed$.subscribe( ex => {
-      /* do the stuff to process here */
-      /* ex is the data */
+    modalRef.onHide$.subscribe( ex => {
+      this.dataModel = ex.data.value;
+     console.log(this.dataModel);
     });
   }
 

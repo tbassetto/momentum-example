@@ -26,6 +26,7 @@ import { Overlay } from '@angular/cdk/overlay';
     FormsModule
   ],
   providers: [ModalService, Overlay],
-  bootstrap: [AppComponent, AppModalComponent]
+  entryComponents: [AppModalComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
