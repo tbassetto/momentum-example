@@ -6,4 +6,12 @@ class="btn"
 >
 Default/Medium Modal
 </button>
+<md-badge color="blue" [mdPopover]="tooltipTemplate"  direction="bottom">Popover from template</md-badge>
+<ng-template #tooltipTemplate>
+  <p>this is cool info in a popover</p>
+</ng-template>
+<md-badge color="blue" [mdPopover]="tootltipTemplate2" direction="bottom">Popover from template</md-badge>
+      <ng-template #tootltipTemplate2>
+          <p>this is cool</p>
+      </ng-template>
 
