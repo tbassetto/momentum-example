@@ -7,13 +7,15 @@ import { AppMomentumModule } from './app-momentum/app-momentum.module';
 import { HomeComponent } from './pages/home/home.component';
 import { UsersPageComponent } from './pages/users-page/users-page.component';
 import { DrawersPageComponent } from './pages/drawers-page/drawers-page.component';
+import { ModalWithFormComponent } from './pages/drawers-page/modal-with-form/modal-with-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     UsersPageComponent,
-    DrawersPageComponent
+    DrawersPageComponent,
+    ModalWithFormComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +23,6 @@ import { DrawersPageComponent } from './pages/drawers-page/drawers-page.componen
     AppMomentumModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  exports: [DrawersPageComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

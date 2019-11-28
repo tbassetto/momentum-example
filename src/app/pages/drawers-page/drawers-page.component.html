@@ -9,5 +9,13 @@
   </button>
   <md-drawer [(isOpen)]="showDrawer" (drawerChanged)="changeDrawer($event)">
     <p>Put content here</p>
+    <button
+      md-button
+      aria-label="Open Modal"
+      color="blue"
+      (click)="openModal()"
+    >
+      Open Modal
+    </button>
   </md-drawer>
 </div>
