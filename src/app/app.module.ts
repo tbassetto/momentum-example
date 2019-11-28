@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { AppMomentumModule } from './app-momentum/app-momentum.module';
 import { HomeComponent } from './pages/home/home.component';
 import { UsersPageComponent } from './pages/users-page/users-page.component';
+import { DrawersPageComponent } from './pages/drawers-page/drawers-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    UsersPageComponent
+    UsersPageComponent,
+    DrawersPageComponent
   ],
   imports: [
     BrowserModule,
@@ -19,6 +21,7 @@ import { UsersPageComponent } from './pages/users-page/users-page.component';
     AppMomentumModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [DrawersPageComponent]
 })
 export class AppModule { }

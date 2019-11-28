@@ -1,0 +1,13 @@
+<div>
+  <button
+    md-button
+    aria-label="Open Drawer"
+    color="blue"
+    (click)="toggleDrawer()"
+  >
+    Toggle Drawer
+  </button>
+  <md-drawer [(isOpen)]="showDrawer" (drawerChanged)="changeDrawer($event)">
+    <p>Put content here</p>
+  </md-drawer>
+</div>
